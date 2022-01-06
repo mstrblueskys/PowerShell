@@ -20,6 +20,6 @@ While ($ClickGo = 1){
 
     $SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0); 
 
-    Start-Sleep -Seconds 3 
+    Start-Sleep -Seconds 30
 
 } 
