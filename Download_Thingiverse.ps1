@@ -1,7 +1,16 @@
+######################################################################
+#
+#  Written as a proof of concept should anyone need to scrub files
+#  from a website. Set parameters for URL, MaxPage, and Crop number to 
+#  correctly apply this to other sites.
+#
+#####################################################################
+
 # Set vars
 
 $URL = "https://www.thingiverse.com/thing:"
 $Extension = "/zip"
+$CropVar = 7
 $Page = 1
 $Filename = ""
 $MaxPage = 9999999
@@ -15,8 +24,8 @@ If(!(Test-Path "C:\ThingiverseDownload\")){
 While ($Page -lt $MaxPage){
     # Build URL
     $ZerosPage = $Zeros + $Page
-    $CropTo = $ZerosPage.Length -7
-    $URLEnd = $ZerosPage.Substring($CropTo,7)
+    $CropTo = $ZerosPage.Length - $CropVar
+    $URLEnd = $ZerosPage.Substring($CropTo,$CropVar)
     $ThingPage = $URL + $URLEnd
     $Full = $URL + $URLEnd + $Extension
     $Full
