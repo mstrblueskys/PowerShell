@@ -58,4 +58,4 @@ While ($true){
 Invoke-WebRequest $IFUri
 
 # Ping your Home Assistant API
-Invoke-RestMethod -Method Post -Uri $RestUri -Body ($body) -Header $ha_api_headers
+Invoke-RestMethod -Method Post -Uri $RestUri -Body ($body) -Header $Headers
